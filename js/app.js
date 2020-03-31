@@ -59,7 +59,11 @@ function AddNavContentOnLoad() {
   //add  navbar once sections have been obtained
   for (section of sections) {
     console.log(section.id);
+    newSection = document.createElement("li");
+    newSection.textContent = section.id;
+    console.log(newSection);
   }
+  //add to navbar at the end navbar.
 }
 
 function getSections() {
