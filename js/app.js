@@ -55,4 +55,16 @@ function AddNavContentOnLoad() {
   console.log("Content is Loaded");
   let navbar = document.getElementById("navbar__list");
   console.log(navbar);
+  sections = getSections();
+  //add  navbar once sections have been obtained
+  for (section of sections) {
+    console.log(section.id);
+  }
+}
+
+function getSections() {
+  sections = document.querySelectorAll("section");
+  //console.log(sections.length);
+
+  return sections;
 }
