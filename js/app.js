@@ -50,20 +50,25 @@
 
 //event listenters
 document.addEventListener("DOMContentLoaded", AddNavContentOnLoad);
+document.getElementsByTagName("a");
 
 function AddNavContentOnLoad() {
-  console.log("Content is Loaded");
+  //console.log("Content is Loaded");
+  const sectionFragment = document.createDocumentFragment();
   let navbar = document.getElementById("navbar__list");
-  console.log(navbar);
+  // console.log(navbar);
   sections = getSections();
   //add  navbar once sections have been obtained
   for (section of sections) {
     console.log(section.id);
     newSection = document.createElement("li");
-    newSection.textContent = section.id;
+    newSection.innerHTML = `<a id="nav-${section.id}" href="#${section.id}" class="navSection">${section.id}</a>`;
+    sectionFragment.appendChild(newSection);
     console.log(newSection);
   }
   //add to navbar at the end navbar.
+  console.log(navbar);
+  navbar.appendChild(sectionFragment);
 }
 
 function getSections() {
