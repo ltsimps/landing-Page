@@ -47,3 +47,12 @@
 // Scroll to section on link click
 
 // Set sections as active
+
+//event listenters
+document.addEventListener("DOMContentLoaded", AddNavContentOnLoad);
+
+function AddNavContentOnLoad() {
+  console.log("Content is Loaded");
+  let navbar = document.getElementById("navbar__list");
+  console.log(navbar);
+}
